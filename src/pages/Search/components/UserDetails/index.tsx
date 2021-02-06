@@ -1,18 +1,22 @@
 import './styles.scss';
 import ButtonIcon from "core/assets/components/ButtonIcon"
+import { User } from 'core/types/User';
+import dayjs from 'dayjs';
 
-const UserDetails = () => {
+type Props = {
+    user? : User;
+}
+const UserDetails = ({user} : Props) => {
     return (
         <div className="second-content">
             <div className="second-content-col1">
                 <img
-                    src="https://avatars.githubusercontent.com/u/30843415?v=4"
+                    src={user?.avatar_url}
                     className="git-img"
-                    alt=""
+                    alt="Foto do user"
                 />
                 <div className="detail-btn" >
-                   {/* `https://github.com/${user?.login}` */}
-                    <a href="link" target="_new" > 
+                    <a href={user?.html_url} > 
                         <ButtonIcon text="Ver Perfil" />
                     </a>
                 </div>
@@ -20,13 +24,13 @@ const UserDetails = () => {
             <div className="second-content-col2 col-9">
                 <div className="content-item">
                     <div className="user-item">
-                        Repositórios públicos: 62
+                        Repositórios públicos: {user?.public_repos}
                      </div>
                     <div className="user-item">
-                        Seguidores: 127
+                        Seguidores: {user?.followers}
                     </div>
                     <div className="user-item">
-                        Seguindo: 416
+                        Seguindo: {user?.following}
                     </div>
                 </div>
                 <div className="detail-bottom">
@@ -34,16 +38,16 @@ const UserDetails = () => {
                         Informações
                     </h3>                    
                     <span className="user-info">
-                        <strong>Empresa:</strong> @ZupIT
+                        <strong>Empresa:</strong> {user?.company}
                     </span>
                     <span className="user-info">
-                        <strong>Website/Blog: </strong>
+                        <strong>Website/Blog: </strong> {user?.blog}
                     </span>
                     <span className="user-info">
-                        <strong> Localidade:</strong>
+                        <strong> Localidade:</strong> {user?.location}
                     </span>
                     <span className="user-info">
-                        <strong>Membro desde:</strong>
+                        <strong>Membro desde:</strong> {dayjs (user?.created_at).format('DD/MM/YYYY')}
                     </span>
                 </div>
             </div>

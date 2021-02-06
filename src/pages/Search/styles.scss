@@ -23,11 +23,17 @@
     line-height: 24px;
 }
 .second-content {
-    background: grey;
+    background: #F5F5F5;
     border-radius: 8px;
     padding: 23px 23px 27px 30px;
     height: 385px;
     margin-top: 55px;
     display: flex;   
-    width: 100% 
+
+}
+.content-loaders{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 55px;
+
 }

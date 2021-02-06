@@ -12,13 +12,13 @@
 }
 .detail-bottom{
     margin-top: 12px;
+    margin-right: 23px;
+    margin-bottom: 84px;
     border: 1px solid #D9D9D9;
     border-radius: 6px;
     padding: 8px 14px;
     background-color: #FFF;
-    margin-right: 23px;
-    display: block;
-    margin-bottom: 84px;
+    
 }
 .user-item {
     font-weight: normal;
@@ -34,7 +34,7 @@
 
 }
 .content-item {
-    display: inline;
+    display: flex;
  }
 .user-title {
     color: #1890ff;
